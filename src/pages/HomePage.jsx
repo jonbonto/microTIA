@@ -5,6 +5,29 @@ import { postActions } from '../actions';
 import PostList from '../components/PostList';
 
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    window.onscroll = () => {
+      const {
+        getPosts,
+        error,
+        loading,
+        end,
+        nextPage  
+      } = this.props;
+
+      if (error || loading || end) return;
+
+      if (
+        window.innerHeight + document.documentElement.scrollTop
+        === document.documentElement.offsetHeight
+      ) {
+        getPosts(nextPage);
+      }
+    };
+  }
+  
   componentDidMount() {
     this.props.getPosts();
   }
@@ -14,28 +37,33 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { posts } = this.props;
+    const { posts, error, end, loading } = this.props;
     return (
       <React.Fragment>
-        {posts.error && <span className="text-danger">ERROR: {posts.error}</span>}
-        {posts.posts &&  <PostList posts={posts.posts} />}
-        {posts.loading && <em>Loading posts...</em>}
+        {posts &&  <PostList posts={posts} />}
+        {loading && <em>Loading posts...</em>}
+        {error && <span className="text-danger">ERROR: {error}</span>}
+        {end && <em>No more posts...</em>}
       </React.Fragment>
     );
   }
 }
 
 function mapStateToProps(state) {
-  const { posts } = state;
+  const { posts, error, loading, end, nextPage } = state.posts;
   return {
-    posts
+    posts, 
+    error, 
+    loading, 
+    end, 
+    nextPage
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     getPosts: (page) => dispatch(postActions.getPosts(page)),
-    clearPosts: postActions.clearPosts
+    clearPosts: () => dispatch(postActions.clearPosts())
   };
 }
 

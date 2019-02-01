@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
@@ -14,7 +14,7 @@ class App extends Component {
         <React.Fragment>
           <Card>
             <Navbar>
-              <Navbar.Brand href={process.env.PUBLIC_URL}>microTIA</Navbar.Brand>
+              <Link to="/"><Navbar.Brand>microTIA</Navbar.Brand></Link>
               <Navbar.Toggle />
             </Navbar>
           </Card>

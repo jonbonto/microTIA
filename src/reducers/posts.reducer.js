@@ -15,6 +15,12 @@ export function posts(state = { posts: [], nextPage: 1}, action) {
         loading: false,
         posts: [...state.posts, ...action.posts] 
       };
+    case postConstants.GET_POSTS_NO_MORE:
+      return {
+        ...state,
+        loading: false,
+        end: true 
+      };
     case postConstants.GET_POST_SUCCESS:
       return {
         ...state,
@@ -24,7 +30,8 @@ export function posts(state = { posts: [], nextPage: 1}, action) {
     case postConstants.CLEAR_POSTS:
       return {
         ...state,
-        posts: []
+        posts: [],
+        end: false
       };
     case postConstants.POSTS_NEXT_PAGE:
       return {

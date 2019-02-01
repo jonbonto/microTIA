@@ -10,26 +10,29 @@ class SinglePostPage extends React.Component {
   }
 
   render() {
-    const { posts } = this.props;
-    if (posts.blank) {
+    const { post, error, loading, blank } = this.props;
+    if (blank) {
       return (
-        <div>BLANK</div>
+        <div>Anda Sudah melihat 5 artikel bulan ini</div>
       );
     }
     return (
       <React.Fragment>
-        {posts.error && <span className="text-danger">ERROR: {posts.error}</span>}
-        {posts.post &&  <Post post={posts.post} />}
-        {posts.loading && <em>Loading post...</em>}
+        {error && <span className="text-danger">ERROR: {error}</span>}
+        {post &&  <Post post={post} />}
+        {loading && <em>Loading post...</em>}
       </React.Fragment>
     );
   }
 }
 
 function mapStateToProps(state, ownProps) {
-  const { posts } = state;
+  const { post, error, loading, blank } = state.posts;
   return {
-    posts,
+    post,
+    error,
+    loading,
+    blank,
     slug: ownProps.match.params.slug
   };
 }

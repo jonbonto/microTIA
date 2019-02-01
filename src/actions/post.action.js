@@ -15,13 +15,20 @@ function getPosts(page = 1) {
       .then(
         data => {
           dispatch(success(data.posts));
-          dispatch(nextPage(data.posts.current_page + 1));
+          dispatch(nextPage(data.current_page + 1));
         },
-        error => dispatch(failure(error.toString()))
+        error => {
+          if (error === 'Go home') {
+            dispatch(noMore());
+          } else {
+            dispatch(failure(error.toString()));
+          }
+        }
       );
   };
 
   function request() { return { type: postConstants.GET_POSTS_REQUEST } }
+  function noMore() { return { type: postConstants.GET_POSTS_NO_MORE } }
   function success(posts) { return { type: postConstants.GET_POSTS_SUCCESS, posts } }
   function nextPage(page) { return { type: postConstants.POSTS_NEXT_PAGE, page } }
   function failure(error) { return { type: postConstants.GET_POSTS_FAILURE, error } }
@@ -29,13 +36,13 @@ function getPosts(page = 1) {
 
 function getPost(slug) {
   return dispatch => {
-      dispatch(request());
+    dispatch(request());
 
-      postService.getPost(slug)
-          .then(
-              data => dispatch(success(data.posts[0])),
-              error => dispatch(failure(error.toString()))
-          );
+    postService.getPost(slug)
+      .then(
+        data => dispatch(success(data.posts[0])),
+        error => dispatch(failure(error.toString()))
+      );
   };
 
   function request() { return { type: postConstants.GET_POST_REQUEST } }
