@@ -4,11 +4,13 @@ export const postService = {
   getPosts,
   getPost,
 };
-
-
+const nocors = {
+  mode: 'no-cors'
+};
 
 function getPosts(page = 1) {
   const requestOptions = {
+    ...nocors,
     method: 'GET'
   };
 
@@ -17,6 +19,7 @@ function getPosts(page = 1) {
 
 function getPost(slug) {
   const requestOptions = {
+    ...nocors,
     method: 'GET'
   };
 
