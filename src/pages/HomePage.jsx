@@ -34,6 +34,7 @@ class HomePage extends React.Component {
 
   componentWillUnmount() {
     this.props.clearPosts();
+    window.onscroll = null;
   }
 
   render() {
