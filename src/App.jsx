@@ -10,7 +10,7 @@ import { HomePage, SinglePostPage } from './pages';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <React.Fragment>
           <Card>
             <Navbar>
