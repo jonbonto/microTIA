@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/microTIA/static/js/runtime~main.452b6598.js"
   },
   {
-    "revision": "0162e35c0fb2b77f7571",
-    "url": "/microTIA/static/js/main.0162e35c.chunk.js"
+    "revision": "bcf3ff20db9c867b99f5",
+    "url": "/microTIA/static/js/main.bcf3ff20.chunk.js"
   },
   {
     "revision": "726c43c55adb1ffced0b",
     "url": "/microTIA/static/js/1.726c43c5.chunk.js"
   },
   {
-    "revision": "0162e35c0fb2b77f7571",
+    "revision": "bcf3ff20db9c867b99f5",
     "url": "/microTIA/static/css/main.f6ac1eb5.chunk.css"
   },
   {
-    "revision": "ce30549ce93055877e644a6401a8a66a",
+    "revision": "92707c14bdab2f8f60c129e1a765fffe",
     "url": "/microTIA/index.html"
   }
 ];
