@@ -3,6 +3,7 @@ import { postService } from '../services';
 
 export const postActions = {
   getPosts,
+  clearPosts,
   getPost
 };
 
@@ -40,4 +41,8 @@ function getPost(slug) {
   function request() { return { type: postConstants.GET_POST_REQUEST } }
   function success(post) { return { type: postConstants.GET_POST_SUCCESS, post } }
   function failure(error) { return { type: postConstants.GET_POST_FAILURE, error } }
+}
+
+function clearPosts() {
+  return { type: postConstants.CLEAR_POSTS };
 }

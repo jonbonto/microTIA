@@ -9,6 +9,10 @@ class HomePage extends React.Component {
     this.props.getPosts();
   }
 
+  componentWillUnmount() {
+    this.props.clearPosts();
+  }
+
   render() {
     const { posts } = this.props;
     return (
@@ -30,7 +34,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getPosts: (page) => dispatch(postActions.getPosts(page))
+    getPosts: (page) => dispatch(postActions.getPosts(page)),
+    clearPosts: dispatch(postActions.clearPosts)
   };
 }
 

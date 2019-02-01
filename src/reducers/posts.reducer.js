@@ -21,6 +21,11 @@ export function posts(state = { posts: [], nextPage: 1}, action) {
         loading: false,
         post: action.post 
       };
+    case postConstants.CLEAR_POSTS:
+      return {
+        ...state,
+        posts: []
+      };
     case postConstants.POSTS_NEXT_PAGE:
       return {
         ...state,
