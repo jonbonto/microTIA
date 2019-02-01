@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://jonbonto.github.io/microTIA",
   "dependencies": {
+    "axios": "^0.18.0",
     "connected-react-router": "^6.2.2",
     "history": "^4.7.2",
     "moment": "^2.24.0",
