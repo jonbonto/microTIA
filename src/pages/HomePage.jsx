@@ -35,7 +35,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getPosts: (page) => dispatch(postActions.getPosts(page)),
-    clearPosts: dispatch(postActions.clearPosts)
+    clearPosts: postActions.clearPosts
   };
 }
 
