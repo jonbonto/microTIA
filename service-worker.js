@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/microTIA/precache-manifest.e8d62f7ace40f4568cc3914e2b3b4f71.js"
+  "/microTIA/precache-manifest.7245e352a7578d4e9b590906a0f6b33d.js"
 );
 
 workbox.clientsClaim();
