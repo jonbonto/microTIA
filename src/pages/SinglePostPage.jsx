@@ -17,11 +17,11 @@ class SinglePostPage extends React.Component {
       );
     }
     return (
-      <>
+      <React.Fragment>
         {posts.error && <span className="text-danger">ERROR: {posts.error}</span>}
         {posts.post &&  <Post post={posts.post} />}
         {posts.loading && <em>Loading post...</em>}
-      </>
+      </React.Fragment>
     );
   }
 }

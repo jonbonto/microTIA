@@ -16,11 +16,11 @@ class HomePage extends React.Component {
   render() {
     const { posts } = this.props;
     return (
-      <>
+      <React.Fragment>
         {posts.error && <span className="text-danger">ERROR: {posts.error}</span>}
         {posts.posts &&  <PostList posts={posts.posts} />}
         {posts.loading && <em>Loading posts...</em>}
-      </>
+      </React.Fragment>
     );
   }
 }
