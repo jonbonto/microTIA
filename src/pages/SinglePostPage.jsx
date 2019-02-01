@@ -11,6 +11,11 @@ class SinglePostPage extends React.Component {
 
   render() {
     const { posts } = this.props;
+    if (posts.blank) {
+      return (
+        <div>BLANK</div>
+      );
+    }
     return (
       <>
         {posts.error && <span className="text-danger">ERROR: {posts.error}</span>}

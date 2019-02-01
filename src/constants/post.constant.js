@@ -9,4 +9,6 @@ export const postConstants = {
 
   CLEAR_POSTS: 'CLEAR_POSTS',
   POSTS_NEXT_PAGE: 'POSTS_NEXT_PAGE',
+
+  SET_BLANK_POST: 'SET_BLANK_POST',
 };

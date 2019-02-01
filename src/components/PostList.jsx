@@ -10,7 +10,7 @@ import 'moment/locale/id';
 
 const PostList = ({posts}) => {
   const postList = posts.map(post => (
-    <ListGroup.Item key={post.id}>
+    <ListGroup.Item key={post.slug}>
       <Row>
         <Col xs={6} md={8}>
           <span>{post.categories && post.categories[0].name}</span>

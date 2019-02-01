@@ -31,6 +31,11 @@ export function posts(state = { posts: [], nextPage: 1}, action) {
         ...state,
         nextPage: action.page
       };
+    case postConstants.SET_BLANK_POST:
+      return {
+        ...state,
+        blank: action.payload
+      };
     case postConstants.GET_POSTS_FAILURE:
     case postConstants.GET_POST_FAILURE:
       return { 
