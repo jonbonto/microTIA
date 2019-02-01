@@ -1,4 +1,7 @@
-const apiUrl = 'https://id.techinasia.com/wp-json/techinasia/3.0/posts';
+let apiUrl = 'https://id.techinasia.com/wp-json/techinasia/3.0/posts';
+if (process.env.NODE_ENV === 'production') {
+  apiUrl = 'http://cors.io/?' + apiUrl;
+}
 
 export const postService = {
   getPosts,

@@ -14,7 +14,7 @@ class App extends Component {
         <React.Fragment>
           <Card>
             <Navbar>
-              <Navbar.Brand href="/">microTIA</Navbar.Brand>
+              <Navbar.Brand href={process.env.PUBLIC_URL}>microTIA</Navbar.Brand>
               <Navbar.Toggle />
             </Navbar>
           </Card>
