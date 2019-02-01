@@ -6,23 +6,24 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from "react-router-dom";
 import * as moment from 'moment';
+import 'moment/locale/id';
 
 const PostList = ({posts}) => {
   const postList = posts.map(post => (
-    <ListGroup.Item>
-      <Row key={post.id}>
+    <ListGroup.Item key={post.id}>
+      <Row>
         <Col xs={6} md={8}>
-          <span>{post.categories[0].name}</span>
+          <span>{post.categories && post.categories[0].name}</span>
           <Link to={`/${post.slug}`}><h3 dangerouslySetInnerHTML={{ __html: post.title }} /></Link>
           <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
           <Row>
             <Col md={4}>
               <Row>
                 <Col md={4}>
-                  <Image width={40} src={post.author.avatar_url} roundedCircle={true}/>
+                  <Image width={40} src={post.author && post.author.avatar_url} roundedCircle={true}/>
                 </Col>
                 <Col md={8}>
-                  <p>{post.author.first_name} {post.author.last_name}</p>
+                  <p>{post.author && post.author.first_name} {post.author && post.author.last_name}</p>
                   <p>{moment(post.date).fromNow()}</p>
                 </Col>
               </Row>
@@ -33,14 +34,14 @@ const PostList = ({posts}) => {
           </Row>
         </Col>
         <Col xs={6} md={4}>
-          <Link to={`/${post.slug}`}><Image src={post.featured_image.attachment_meta.sizes.medium.url} alt={post.featured_image.description} /></Link>
+          <Link to={`/${post.slug}`}><Image src={post.featured_image && post.featured_image.attachment_meta.sizes.medium.url} alt={post.featured_image && post.featured_image.description} /></Link>
         </Col>
       </Row>
     </ListGroup.Item>
   ));
-
+  
   return (
-    <Card style={{ width: '80vw' }}>
+    <Card>
       <ListGroup>
         {postList}
       </ListGroup>

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
 
-import PostList from './components/PostList';
-import Post from './components/Post';
-import data from './data.json';
 import './App.css';
+import { HomePage, SinglePostPage } from './pages';
 
 class App extends Component {
   render() {
@@ -21,8 +19,8 @@ class App extends Component {
             </Navbar>
           </Card>
           <Container>
-            <Route path="/" exact render={() => <PostList posts={data.posts} />} />
-            <Route path="/:slug" component={({match}) => <Post match={match}/>} />
+            <Route path="/" exact component={HomePage} />
+            <Route path="/:slug" component={SinglePostPage} />
           </Container>
         </React.Fragment>
       </Router> 
