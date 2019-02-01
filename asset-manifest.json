@@ -1,13 +1,13 @@
 {
   "main.css": "/microTIA/static/css/main.f6ac1eb5.chunk.css",
-  "main.js": "/microTIA/static/js/main.98e321ff.chunk.js",
-  "main.js.map": "/microTIA/static/js/main.98e321ff.chunk.js.map",
+  "main.js": "/microTIA/static/js/main.2b13b659.chunk.js",
+  "main.js.map": "/microTIA/static/js/main.2b13b659.chunk.js.map",
   "static/js/1.9dff646e.chunk.js": "/microTIA/static/js/1.9dff646e.chunk.js",
   "static/js/1.9dff646e.chunk.js.map": "/microTIA/static/js/1.9dff646e.chunk.js.map",
   "runtime~main.js": "/microTIA/static/js/runtime~main.452b6598.js",
   "runtime~main.js.map": "/microTIA/static/js/runtime~main.452b6598.js.map",
   "static/css/main.f6ac1eb5.chunk.css.map": "/microTIA/static/css/main.f6ac1eb5.chunk.css.map",
   "index.html": "/microTIA/index.html",
-  "precache-manifest.e49744d35e9ada37f9e37893e4047bcf.js": "/microTIA/precache-manifest.e49744d35e9ada37f9e37893e4047bcf.js",
+  "precache-manifest.634f179bdd31ce77990eb51ebec7cd42.js": "/microTIA/precache-manifest.634f179bdd31ce77990eb51ebec7cd42.js",
   "service-worker.js": "/microTIA/service-worker.js"
 }
